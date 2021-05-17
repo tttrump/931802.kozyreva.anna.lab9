@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab9</title>
+    <link rel="stylesheet" href="style9.css" type = "text/css">
+</head>
+<body>
+    
+    <div class="main">
+        <input type="text" value=""  style="width: 290px; margin-bottom: 5px;height: 55px; text-align: right; font-size: 180%;" id="result" readonly/>
+        <div style="margin-bottom: 5px;">
+        <button class="but" style="display: inline-block;" id="seven">7</button>
+        <button class="but" style="display: inline-block;" id="eight">8</button>
+        <button class="but" style="display: inline-block;" id="nine">9</button>
+        <button class="but" style="display: inline-block;" id="div">/</button>
+        <button class="but" style="display: inline-block;" id="delall">C</button>
+        </div>
+        <div style="margin-bottom: 5px;">
+        <button class="but" style="display: inline-block;" id="four">4</button>
+        <button class="but" style="display: inline-block;" id="five">5</button>
+        <button class="but" style="display: inline-block;" id="six">6</button>
+        <button class="but" style="display: inline-block;" id="mul">*</button>
+        <button class="but" style="display: inline-block;" id="delone"><-</button>
+        </div>
+        <div style="display: block;">
+            <button class="but1" style=" float: right;" id="equal">=</button>
+        <div style="margin-bottom: 5px;">
+            
+            <button class="but" style="display: inline-block;" id="one">1</button>
+            <button class="but" style="display: inline-block;" id="two">2</button>
+            <button class="but" style="display: inline-block;" id="three">3</button>
+            <button class="but" style="display: inline-block;" id="sub">-</button>         
+        </div>
+        <div style="margin-bottom: 5px;">
+            <button class="but2" style="display: inline-block;" id="zero">0</button>
+            <button class="but" style="display: inline-block;" id="point">.</button>
+            <button class="but" style="display: inline-block;" id="add">+</button>
+        </div>
+            
+        </div>
+        
+    </div>
+    
+    <script>
+	var seven = document.getElementById("seven");
+var eight = document.getElementById("eight");
+var nine = document.getElementById("nine");
+var one = document.getElementById("one");
+var two = document.getElementById("two");
+var three = document.getElementById("three");
+var four = document.getElementById("four");
+var five = document.getElementById("five");
+var six = document.getElementById("six");
+var sub = document.getElementById("sub");
+var add = document.getElementById("add");
+var mul = document.getElementById("mul");
+var div = document.getElementById("div");
+var point = document.getElementById("point");
+var delall = document.getElementById("delall");
+var delone = document.getElementById("delone");
+var result = document.getElementById("result");
+
+
+
+
+
+let lastnum;
+let text ='';
+let result1;
+
+one.onclick = function(){
+    
+    if(lastnum)
+    {
+        lastnum= lastnum+'1';
+    }
+    else
+    {
+        lastnum= '1';
+    }
+    result.setAttribute('value', text+lastnum);
+    color();
+}
+
+two.onclick = function(){
+    if(lastnum)
+    {
+        lastnum= lastnum+'2';
+    }
+    else
+    {
+        lastnum='2';
+    } 
+    result.setAttribute('value', text+lastnum);
+    color();
+}
+
+three.onclick = function(){
+    if(lastnum)
+    {
+        lastnum= lastnum+'3';
+    }
+    else
+    {
+        lastnum='3';
+    }
+    result.setAttribute('value',text+lastnum);
+    color();
+}
+
+four.onclick = function(){
+    if(lastnum)
+    {
+        lastnum= lastnum+'4';
+    }
+    else
+    {
+        lastnum='4';
+    }
+    result.setAttribute('value', text+lastnum);
+    color();
+}
+
+five.onclick = function(){
+    if(lastnum)
+    {
+        lastnum= lastnum+'5';
+    }
+    else
+    {
+        lastnum='5';
+    }
+    result.setAttribute('value', text+lastnum);
+    color();
+}
+
+six.onclick = function(){
+    if(lastnum)
+    {
+        lastnum= lastnum+'6';
+    }
+    else
+    {
+        lastnum='6';
+    }
+    result.setAttribute('value', text+lastnum);
+    color();
+}
+
+seven.onclick = function(){
+    if(lastnum)
+    {
+        lastnum= lastnum+'7';
+    }
+    else
+    {
+        lastnum='7';
+    }
+    result.setAttribute('value', text+lastnum);
+    color();
+}
+
+eight.onclick = function(){
+    if(lastnum)
+    {
+        lastnum= lastnum+'8';
+    }
+    else
+    {
+        lastnum='8';
+    }
+    result.setAttribute('value', text+lastnum);
+    color();
+}
+
+nine.onclick = function(){
+    if(lastnum)
+    {
+        lastnum= lastnum+'9';
+    }
+    else
+    {
+        lastnum= '9';
+    }
+    result.setAttribute('value', text+lastnum);
+    color();
+}
+
+zero.onclick = function(){
+    if(lastnum)
+    {
+        lastnum= lastnum+'0';
+    }
+    else
+    {
+        lastnum= '0';
+    }
+    result.setAttribute('value', text+lastnum);
+    color();
+}
+
+point.onclick = function(){
+    if(lastnum){
+        lastnum=lastnum+'.';
+    }  
+    result.setAttribute('value', text+lastnum);
+    color();
+}
+
+add.onclick = function(){
+    if(lastnum!=''){
+   text = text+lastnum +"+";
+   result.setAttribute('value', text);
+   lastnum = '';
+    }
+    color();
+
+   
+
+}
+
+sub.onclick = function(){
+    if(lastnum!=''){
+   text = text+lastnum +"-";
+   result.setAttribute('value', text);
+   lastnum = '';
+    }
+    color();
+}
+
+div.onclick = function(){
+    if(lastnum!=''){
+   text = text+lastnum +"/";
+   result.setAttribute('value', text);
+   lastnum = '';
+    }
+    color();
+}
+
+mul.onclick = function(){
+    if(lastnum!=''){
+        text = text+lastnum +"*";
+        result.setAttribute('value', text);
+        lastnum = '';
+    }
+    color();
+   
+
+}
+
+equal.onclick =  function(){
+    result1 = eval(text+lastnum);
+    result.setAttribute('value', result1);
+    lastnum = result1;
+    result1 = '';
+    text = '';
+    color();
+}
+
+delall.onclick=  function(){
+    result.setAttribute('value', "");
+    text = '';
+    result1 = '';
+    lastnum = '';
+    color();
+
+}
+
+delone.onclick = function(){
+    
+    if(lastnum !='')
+    {
+        lastnum = lastnum.slice(0,-1);
+        result.setAttribute('value', text+lastnum);
+    }
+    else
+    {
+        text = text.slice(0,-1);
+        result.setAttribute('value', text);
+    }
+    color();
+}
+
+function color(){
+
+    if(result.value.length-1 !=-1)
+{
+    console.log(result.value.length-1);
+    result.value[result.value.length-1].color = 'red';
+}
+
+}
+	</script>
+</body>
+</html>
